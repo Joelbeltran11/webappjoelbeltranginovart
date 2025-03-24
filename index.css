@@ -9,20 +9,18 @@ body {
     min-height: 100svh;    /* per a navegadors on la declaració anterior no és precisa */
     min-height: -webkit-fill-available;    
     margin: 0px;    /* elimina tots els marges del document */
-    font-family: serif;    /* un tipus de lletra adient per a llocs web */
-    background-color: #94f9a2;    /* color de fons en format #RRGGBB */
+    font-family: sans-serif;    /* un tipus de lletra adient per a llocs web */
+    background-color: #81c9f8;    /* color de fons en format #RRGGBB */
 }
-
 #superior {
     display: flex;
     height: 8vmax;    /* alçària d'un 8% respecte l'alçària de la pantalla */
     justify-content: center;    /* centra els elements en la direcció de disposició */
     align-items: center;    /* centra els elements en la direcció perpendicular a la de disposició */
     font-size: 4vmax;    /* mida d'un 4% respecte l'alçària de la pantalla */
-    color: white;    /* color del text */
-    background-color: #43db3f;    /* color de fons */
+    color: rgb(255, 255, 255);    /* color del text */
+    background-color: #b534ff ;    /* color de fons */
 }
-
 .seccio {
     flex: 1;    /* les seccions ocupen tot l'espai disponible */
     display: none;    /* les seccions s'inicien ocultes, excepte la primera */
@@ -35,5 +33,30 @@ body {
 }
 
 #menu {
-    height: 8vmax;    /* alçària d'un 8% respecte l'alçària de la pantalla */
+    display: flex;    /* el menú és un contenidor de tipus flex */
+    height: 8vmax;
+}
+#menu i{
+    flex: 1;    /* cada botó pretén ocupar tot l'espai disponible */
+    display: flex;    /* contenidor flex on centrar-hi la icona */
+    justify-content: center;
+    align-items: center;
+    color: rgb(255, 255, 255);
+    background-color: #b534ff;
+    font-size: 5vmax;
+    cursor: pointer;    /* en ordinadors, indica que s'hi pot fer clic */
+}
+@media (orientation: landscape) {
+    body {
+        flex-direction: row;    /* sobreescriu la declaració flex-direction: column; */
+        flex-flow: row-reverse;    /* disposició de dreta a esquerra, per mostrar el menú a l'esquerra */
+    }
+    #superior {
+        display: none;    /* franja superior oculta per optimitzar l'espai */
+    }
+    #menu {
+        flex-direction: column;
+        width: 8vmax;
+        height: auto;    /* sobreescriu la declaració height: 8vmax; */
+    }
 }

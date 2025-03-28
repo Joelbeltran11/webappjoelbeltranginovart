@@ -140,6 +140,7 @@ body {
 }
 @media (orientation: landscape) {
     #seccio_2 {
+        display:flex
         flex-direction: row;
     }
     #div_foto {

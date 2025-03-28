@@ -2,6 +2,7 @@
 <html>  <!-- contingut -->
 <html lang="ca">
     <head>
+      <script src="index.js"></script>
         <meta charset="UTF-8">    <!-- codificació del text (UTF-8) -->
      <meta name="viewport" content="width=device-width, initial-scale=1">    <!-- adapta la visualització a les mides de la pantalla -->
         <meta name="description" content="Descripció de la nostra webapp.">    <!-- breu descripció per als cercadors -->
@@ -46,7 +47,6 @@
            Secció 1
      </div>
      <div id="seccio_2" class="seccio"> 
-        <div id="seccio_2" class="seccio">
             <div id="div_foto">    <!-- contenidor de la vista prèvia de la foto feta -->
               <img id="foto">
               <i id="icona_camera" class="fa-solid fa-image"></i>    <!-- icona que ocupa l'espai quan encara no s'ha fet la foto -->
@@ -88,6 +88,7 @@
          <i id="boto_3" class="fa-solid fa-image"></i>     <!-- galeria -->
          <i id="boto_4" class="fa-solid fa-map"></i>    <!-- mapa -->
          <i id="boto_5" class="fa-solid fa-brain"></i>
+         <i id="boto_6" class="fa-solid fa-chart-simple"></i>
          <i class="fa-solid fa-right-from-bracket"></i>    <!-- tancar sessió -->
      <div id="seccio_5" class="seccio">
           <div>
@@ -97,6 +98,14 @@
           <div id="reconeixement">    <!-- espai per visualitzar les dades -->
             <div id="coincidencia">COINCIDÈNCIA</div>
             <div id="prediccions"></div>
+          </div>
+        </div>
+      <div id="seccio_6" class="seccio">
+          <div id="div_diagrama">    <!-- contenidor del diagrama de línies -->
+            NIVELL DE LLUM
+            <canvas id="diagrama"></canvas>   <!-- espai que ocuparà el diagrama --> 
+          </div>
+          <div id="div_valor">    <!-- contenidor del valor més actual -->
           </div>
         </div>
      </div>

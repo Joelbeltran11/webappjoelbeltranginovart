@@ -60,7 +60,7 @@ body {
     }
 }
 #seccio_0 {
-    display: none;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;

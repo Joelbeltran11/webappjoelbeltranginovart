@@ -20,6 +20,9 @@ body {
     font-size: 4vmax;    /* mida d'un 4% respecte l'alçària de la pantalla */
     color: rgb(255, 255, 255);    /* color del text */
     background-color: #e6618d ;    /* color de fons */
+    .ocult {
+        display: none !important;    /* amb prioritat sobre les declaracions condicionals segons l'orientació */
+    }
 }
 .seccio {
     flex: 1;    /* les seccions ocupen tot l'espai disponible */

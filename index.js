@@ -15,6 +15,9 @@ function canvia_seccio(num_boto) {
             seccio.style.display = "none";    // s'oculten les seccions inactives
         }
     }
+        if (num_boto == 3) {    // si es prem el botó de la secció "Galeria"
+            omple_llista();
+    }
 }
 let validat = false;    // variable que permet saber si hi ha algun usuari validat
 let nom, contrasenya;
@@ -149,4 +152,14 @@ function mostra_foto(id) {
     document.getElementById("superior").classList.add("ocult");    // s'oculta provisionalment el contenidor superior
     document.getElementById("menu").style.display = "none";    // s'oculta el menú
     document.getElementById("div_gran").style.display = "flex";    // es mostra el contenidor de la foto a pantalla completa
+}
+function retorn_a_seccio() {
+    document.getElementById("superior").classList.remove("ocult");    // s'elimina la classe provisional del contenidor superior
+    document.getElementById("menu").style.display = "flex";    // es mostra el menú
+    document.getElementById("div_gran").style.display = "none";    // s'oculta el contenidor de pantalla completa
+    if (seccio_origen == 2) {    // càmera
+        document.getElementById("seccio_2").style.display = "flex";
+    } else {    // galeria
+        document.getElementById("seccio_3").style.display = "flex";
+    }
 }

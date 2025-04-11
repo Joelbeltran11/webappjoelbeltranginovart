@@ -25,7 +25,6 @@ function canvia_seccio(num_boto) {
         }
     }
     }
-}
 let validat = false;    // variable que permet saber si hi ha algun usuari validat
 let nom, contrasenya;
 let scriptURL = "https://script.google.com/macros/s/AKfycbyF-mSLVaX99VAw4NGdvQT76-YC2-CtB1S32kiy3eNY06no29XFOiBDW6QnrdP9j1heDA/exec "    // s'ha de substituir la cadena de text per la URL del script
@@ -214,4 +213,13 @@ let vegueries = [[41.39, 2.17, "Àmbit metropolità (Barcelona)"],    // llista 
                  [41.35, 1.70, "Penedès (Vilafranca del Penedès"]];
 for (i in vegueries) {    // per cada element de la llista
     L.marker([vegueries[i][0], vegueries[i][1]],{title:vegueries[i][2]}).addTo(mapa);
+}
+function geoExit(posicio){
+    let latitud = posicio.coords.latitude;
+    let longitud = posicio.coords.longitude;
+    if (typeof geoID === "undefined") {    
+        geoID = L.marker([latitud, longitud], {zIndexOffset:100, title:"Usuari"}).addTo(mapa);    // es defineix el marcador  geoID i es situa per sobre dels altres
+    } else {    // primeres dades de localització, es crea el marcador d'usuari 
+        geoID.setLatLng([latitud, longitud]);    // actualització de la posició del marcador d'usuari en el mapa
+    }
 }

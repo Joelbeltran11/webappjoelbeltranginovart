@@ -103,6 +103,7 @@ window.onload = () => {
                 document.getElementById("desa").style.display = "unset";    // es mostra el botó per desar la foto
             }
         }
+    });
     mapa = L.map("seccio_4").setView([41.72, 1.82], 8);    // assigna el mapa a la secció, centrat en el punt i amb el nivell de zoom
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {    // capa d'OpenStreetMap
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'    // autoria de la capa

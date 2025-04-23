@@ -61,6 +61,28 @@ body {
         width: 8vmax;
         height: auto;    /* sobreescriu la declaració height: 8vmax; */
     }
+    #seccio_2 {
+        display:flex;
+        flex-direction: row;
+    }
+    #div_foto {
+        flex-direction: column;
+    }
+    #div_control {
+        width: 25vmax;
+        height: auto;
+        flex-direction: column;
+    }
+    #div_gran {
+        max-height: 100vh;
+        max-height: 100svh;
+    }
+    #foto_gran {
+        transform: rotate(-90deg);    /* gir de 90 graus correponent al canvi d'orientació */
+    }
+    #llista_fotos {
+        height: 70vmin;
+    }
 }
 #seccio_0 {
     display: flex;
@@ -141,27 +163,6 @@ body {
     max-height: 95vmax;
     cursor: pointer;
 }
-@media (orientation: landscape) {
-    #seccio_2 {
-        display:flex;
-        flex-direction: row;
-    }
-    #div_foto {
-        flex-direction: column;
-    }
-    #div_control {
-        width: 25vmax;
-        height: auto;
-        flex-direction: column;
-    }
-    #div_gran {
-        max-height: 100vh;
-        max-height: 100svh;
-    }
-    #foto_gran {
-        transform: rotate(-90deg);    /* gir de 90 graus correponent al canvi d'orientació */
-    }
-}
 #llista_titol {
     display: flex;
     justify-content: center;
@@ -187,11 +188,6 @@ body {
 }
 #llista_fotos::-webkit-scrollbar {
     display: none;    /* oculta la barra de desplaçament vertical */
-}
-@media (orientation: landscape) {
-    #llista_fotos {
-        height: 70vmin;
-    }
 }
 #webcam-container {
     margin: 2vh;

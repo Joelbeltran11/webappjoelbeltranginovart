@@ -1,13 +1,12 @@
 let validat = false;    // variable que permet saber si hi ha algun usuari validat
 let nom, contrasenya;
-let scriptURL = "https://docs.google.com/spreadsheets/d/1AT0aq7y_qlLArnA9IYftNafkn8NU2sQXJRAHrRiyq5U/edit?gid=0#gid=0"    // s'ha de substituir la cadena de text per la URL del script
+let scriptURL = "https://script.google.com/u/0/home/projects/1vzRnLUGGSEPhMOryAy4I7rB2hcNaxCEvYSpAQsFTWQ6CB6erZyEF1DFP/edit"    // s'ha de substituir la cadena de text per la URL del script
 let model, webcam, prediccions, maxPrediccions;
 let canvas_creat = false;
 let diagrama;
 let valors = [[],[]];
 
 function canvia_seccio(num_boto) {
-    
     const menu = document.getElementById("menu");
     const num_botons = menu.children.length;    // el nombre de botons dins de l'element "menu"
     for (let i = 1; i < num_botons; i++) {
@@ -23,21 +22,18 @@ function canvia_seccio(num_boto) {
             boto.style.backgroundColor = "#950E17";
             seccio.style.display = "none";    // s'oculten les seccions inactives
         }
-        if (num_boto == 3) {    // si es prem el botó de la secció "Galeria"
-            omple_llista();
-        }
-        if (num_boto == 4) {
-            mapa.invalidateSize();
-            if (typeof geoID === "undefined") {    // si encara no s'han obtingut les dades de localització del dispositiu
-                navigator.geolocation.watchPosition(geoExit);    // inicia el seguiment de la localització del dispositiu
-            }
-        }
-        if (num_boto == 6) {
-            mostra_diagrama();
+    }
+    if (num_boto == 3) {    // si es prem el botó de la secció "Galeria"
+        omple_llista();
+    }
+    if (num_boto == 4) {
+        mapa.invalidateSize();
+        if (typeof geoID === "undefined") {    // si encara no s'han obtingut les dades de localització del dispositiu
+            navigator.geolocation.watchPosition(geoExit);    // inicia el seguiment de la localització del dispositiu
         }
     }
-    
 }
+
 
 function inici_sessio() {
     nom = document.getElementById("nom_usuari").value;    // la propietat "value" d'un quadre de text correspon al text escrit per l'usuari
@@ -238,7 +234,6 @@ function esborra_foto(id) {
     }
 }
 
-
 function geoExit(posicio){
     let latitud = posicio.coords.latitude;
     let longitud = posicio.coords.longitude;
@@ -246,8 +241,8 @@ function geoExit(posicio){
     let pixels = 24;    // nombre de píxels de la forma
     let mida = 2 * pixels;    // mida de visualització en el mapa
     let ref_vertical = mida / 2;    // distància vertical des del punt superior de la icona fins al punt de la localització
-    let color = "red";
-    let path = "M8.5 4A2 2 0 0 1 6.5 6A2 2 0 0 1 4.5 4A2 2 0 0 1 6.5 2A2 2 0 0 1 8.5 4M5 7C3.89 7 3 7.89 3 9V15H5V22H8.61A7 7 0 0 1 6.5 17A7 7 0 0 1 10 10.95V9C10 7.89 9.11 7 8 7M13 8V16H18.5L21.2 19.6L22.8 18.4L19.5 14H15V8M12 12.23A5 5 0 0 0 8.5 17A5 5 0 0 0 13.5 22A5 5 0 0 0 18.5 17H16.5A3 3 0 0 1 13.5 20A3 3 0 0 1 10.5 17A3 3 0 0 1 12 14.41Z";    // cadena de text de la forma
+    let color = "pink";
+    let path = "M12,2A2,2 0 0,1 14,4A2,2 0 0,1 12,6A2,2 0 0,1 10,4A2,2 0 0,1 12,2M10.5,22V16H7.5L10.09,8.41C10.34,7.59 11.1,7 12,7C12.9,7 13.66,7.59 13.91,8.41L16.5,16H13.5V22H10.5Z";    // cadena de text de la forma
     let cadenaSVG = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ' + pixels + ' ' + pixels + '"><path d="' + path + '" fill="' + color + '" /></svg>';    // construcció de l'element SVG
     let icona = encodeURI("data:image/svg+xml," + cadenaSVG);    // codificació d'espais i caràcters especials per formar una URL vàlida
     let icon = L.icon({    // propietats de la icona
@@ -261,7 +256,6 @@ function geoExit(posicio){
         geoID = L.marker([latitud, longitud], {icon:icon, zIndexOffset:100, title:"Usuari"}).addTo(mapa);    // actualització de la posició del marcador d'usuari en el mapa
     }
 }
-
 
 async function inicia_video() {
     const codi_model = "5K46bqkElUP"    // substitueix els asteriscs pel codi del model d'IA que vas crear en una activitat anterior
@@ -283,13 +277,11 @@ async function inicia_video() {
     }
 }
 
-
 async function loop() {
     webcam.update();
     await prediu();
     window.requestAnimationFrame(loop);
 }
-
 
 async function prediu() {
     const prediccio = await model.predict(webcam.canvas);
@@ -298,6 +290,7 @@ async function prediu() {
         prediccions.childNodes[i].innerHTML = classe;
     }
 }
+
 function mostra_diagrama() {
     if (!canvas_creat) {    // només si no s'ha creat anteriorment
         diagrama = new Chart(document.getElementById("diagrama"), {
@@ -318,7 +311,6 @@ function mostra_diagrama() {
     } 
 }
 
-
 function peticio() {
     const canal = "2897201";    // s'han de substituir els asteriscs pel codi del canal
     const camp = "1";    // el camp 1 (nivell de llum)
@@ -338,4 +330,3 @@ function peticio() {
             diagrama.update();    // actualitza el diagrama d'acord amb el valor rebut
         });
 }
-

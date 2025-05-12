@@ -10,7 +10,7 @@ body {
     min-height: -webkit-fill-available;    
     margin: 0px;    /* elimina tots els marges del document */
     font-family: Candara;    /* un tipus de lletra adient per a llocs web */
-    background-color: #D2B4DE;    /* color de fons en format #RRGGBB */
+    background-color: #f53e3e;    /* color de fons en format #RRGGBB */
 }
 #superior {
     display: flex;

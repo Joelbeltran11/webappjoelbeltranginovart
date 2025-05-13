@@ -1,6 +1,6 @@
 let validat = false;    // variable que permet saber si hi ha algun usuari validat
 let nom, contrasenya;
-let scriptURL = "https://script.google.com/u/0/home/projects/1vzRnLUGGSEPhMOryAy4I7rB2hcNaxCEvYSpAQsFTWQ6CB6erZyEF1DFP/edit"    // s'ha de substituir la cadena de text per la URL del script
+let scriptURL = "https://script.google.com/macros/s/AKfycbyPwDi252vqgfLZcaVOk7v-JE1GPONhPk9ROzhHSQ8J8jgU2JLuL-bPTklaRdXBrbDO1g/exec"    // s'ha de substituir la cadena de text per la URL del script
 let model, webcam, prediccions, maxPrediccions;
 let canvas_creat = false;
 let diagrama;

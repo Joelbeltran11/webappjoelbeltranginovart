@@ -14,13 +14,13 @@ function canvia_seccio(num_boto) {
         let boto = document.getElementById("boto_" + i);
         let seccio = document.getElementById("seccio_" + i);
         if (i == num_boto) {
-            boto.style.color = "#4d0d44";    // es destaca la secció activa amb el canvi de colors del botó corresponent
+            boto.style.color = "#E08AAF";    // es destaca la secció activa amb el canvi de colors del botó corresponent
             boto.style.backgroundColor = "#e0d2e5";
             seccio.style.display = "flex";    // es fa visible la secció activa
         }
         else {
             boto.style.color = "white";    // colors dels botons de seccions inactives
-            boto.style.backgroundColor = "#4d0d44";
+            boto.style.backgroundColor = "#4CB3A79";
             seccio.style.display = "none";    // s'oculten les seccions inactives
         }
         if (num_boto == 3) {    // si es prem el botó de la secció "Galeria"

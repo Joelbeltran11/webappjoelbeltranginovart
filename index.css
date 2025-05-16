@@ -86,7 +86,7 @@ body {
 }
 #icona_camera {
     font-size: 40vmin;
-    color: #b4500d;
+    color: #BD0081;
 }
 #foto {
     max-width: 60vmin;    /* dimensions màximes per a la prveisualització de les fotos */
@@ -102,7 +102,7 @@ body {
 #div_control i {
     cursor: pointer;
     font-size: 20vmin;    
-    color: rgb(177, 55, 55);
+    color: rgb(122, 29, 68);
 }
 #obturador {
     position: absolute;
@@ -136,7 +136,7 @@ body {
 }
 #llista_titol i {
     font-size: 4vmax;
-    color:#ff0800;
+    color:#510639;
 }
 #llista_titol i:nth-child(1) {    /* primer <i> (miniatura de la foto) */
     flex: 2;

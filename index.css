@@ -43,7 +43,7 @@ body {
     justify-content: center;
     align-items: center;
     color: rgb(100, 29, 100);
-    background-color: #AF0D7C;
+    background-color:#E00099;
     font-size: 5vmax;
     cursor: pointer;    /* en ordinadors, indica que s'hi pot fer clic */
 }

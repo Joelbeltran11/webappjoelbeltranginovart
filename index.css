@@ -42,8 +42,8 @@ body {
     display: flex;    /* contenidor flex on centrar-hi la icona */
     justify-content: center;
     align-items: center;
-    color: rgb(30, 7, 73);
-    background-color: #3958F2;
+    color: rgb(100, 29, 100);
+    background-color: #AF0D7C;
     font-size: 5vmax;
     cursor: pointer;    /* en ordinadors, indica que s'hi pot fer clic */
 }

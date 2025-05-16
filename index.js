@@ -245,7 +245,7 @@ function geoExit(posicio){
     let pixels = 24;    // nombre de píxels de la forma
     let mida = 2 * pixels;    // mida de visualització en el mapa
     let ref_vertical = mida / 2;    // distància vertical des del punt superior de la icona fins al punt de la localització
-    let color = "#BD0081";
+    let color = "purple";
     let path = "M19.8 2L11.6 8.7L10.39 7.66L14 5.58L9.41 1L8 2.41L10.74 5.15L5 8.46L3.81 12.75L6.27 17L8 16L5.97 12.5L6.32 11.18L9.5 13L10 22H12L12.5 12L21 3.4L19.8 2M5 3C6.11 3 7 3.9 7 5S6.11 7 5 7 3 6.11 3 5 3.9 3 5 3Z";    // cadena de text de la forma
     let cadenaSVG = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ' + pixels + ' ' + pixels + '"><path d="' + path + '" fill="' + color + '" /></svg>';    // construcció de l'element SVG
     let icona = encodeURI("data:image/svg+xml," + cadenaSVG);    // codificació d'espais i caràcters especials per formar una URL vàlida

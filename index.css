@@ -19,7 +19,7 @@ body {
     align-items: center;    /* centra els elements en la direcció perpendicular a la de disposició */
     font-size: 4vmax;    /* mida d'un 4% respecte l'alçària de la pantalla */
     color: white;    /* color del text */
-    background-color: #cc8314;    /* color de fons */
+    background-color: #510639;    /* color de fons */
     .ocult {
         display: none !important;    /* amb prioritat sobre les declaracions condicionals segons l'orientació */
     }
